@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+body {
+  font-family: Manrope, sans-serif;
+  font-size: 2.8rem;
+  text-align: center;
+  background-color: var(--dark-blue);
+  color: var(--light-cyan);
+}
+
+main {
+  min-height: 100%;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  padding: 1rem;
+}
+
+.card {
+  max-width: 54rem;
+  padding: 4.8rem 2rem 6.8rem;
+  background-color: var(--dark-grayish-blue);
+  border-radius: 1.4rem;
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.4rem;
+  letter-spacing: 0.35rem;
+  text-transform: uppercase;
+  color: var(--neon-green);
+}
+
+.quote {
+  margin: 2.8rem 0 4rem;
+  letter-spacing: -0.02rem;
+  line-height: 3.8rem;
+}
+
+.divider {
+  height: 1.6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.button {
+  width: 6.4rem;
+  aspect-ratio: 1;
+  margin-top: -3.2rem;
+  background: var(--neon-green);
+  color: var(--light-cyan);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.button:active {
+  transform: scale(0.9);
+}
+.button img {
+  margin: auto;
+}
+.button.loading img {
+  animation: 0.5s ease-in-out infinite alternate roll;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    padding: 4.8rem 4rem 6.8rem;
+  }
+}
+@media (hover: hover) {
+  .button:hover {
+    animation: 1s ease infinite alternate glow;
+  }
+}
+@keyframes glow {
+  to {
+    box-shadow: 0 0 3rem var(--neon-green);
+  }
+}
+@keyframes roll {
+  to {
+    transform: rotate(360deg);
+  }
+}
